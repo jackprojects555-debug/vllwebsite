@@ -36,4 +36,16 @@ python-dotenv 1.2.2
 
 ## Run
 
-(To be defined after project initialization)
+After Django project initialization:
+
+Apply migrations:
+
+python manage.py migrate
+
+Create admin user:
+
+python manage.py createsuperuser
+
+Run development server:
+
+python manage.py runserver
