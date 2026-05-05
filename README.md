@@ -9,13 +9,14 @@ A bilingual (Hebrew / English) CMS-based website for a boutique law firm, built 
 
 See PROJECT_SETUP.md
 
-## Stack
+### Stack
 
-- Python
-- Django
-- Wagtail CMS
-- PostgreSQL
+- Python 3.14.4
+- Django 6.0.4
+- Wagtail 7.3.1
+- PostgreSQL (psycopg)
 - HTML / CSS
+- Render
 
 ## Features (Planned)
 

@@ -12,9 +12,9 @@ English: Vardi, Lavie-Loboda & Co.
 Hebrew: ורדי, לביא-לובודה ושות׳
 
 ## Stack
-- Python
-- Django
-- Wagtail CMS
+- Python 3.14.4
+- Django 6.0.4
+- Wagtail 7.3.1 CMS
 - PostgreSQL
 - HTML / CSS
 - Render deployment
