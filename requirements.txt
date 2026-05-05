@@ -1,0 +1,6 @@
+Django
+wagtail
+psycopg[binary]
+python-dotenv
+gunicorn
+whitenoise
