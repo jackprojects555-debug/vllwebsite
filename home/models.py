@@ -17,3 +17,14 @@ class HomePage(Page):
         FieldPanel("intro_text"),
         FieldPanel("contact_cta_text"),
     ]
+
+class AboutPage(Page):
+    intro = models.TextField(blank=True)
+    body = RichTextField(blank=True)
+    values_section = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("intro"),
+        FieldPanel("body"),
+        FieldPanel("values_section"),
+    ]
