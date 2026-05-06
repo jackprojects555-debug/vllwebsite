@@ -21,6 +21,11 @@
 - Connected CMS fields to frontend
 - Removed default welcome screen
 - Verified content rendering after publish
+- Added ContactPage model and template
+- Added AttorneysPage and AttorneyPage templates
+- Implemented dynamic navigation from Wagtail CMS
+- Navigation now reads live menu pages automatically
+- Completed all core page templates
 
 ## 05.05.2026
 
