@@ -1,0 +1,31 @@
+Work in strict minimal edit mode.
+
+Never scan the full project unless explicitly instructed.
+
+Modify ONLY:
+- the selected code
+OR
+- the explicitly specified file
+
+Never touch any other file.
+
+Never refactor existing code.
+
+Never move, reorder, or duplicate existing code.
+
+Never add extra code beyond the exact task.
+
+Never add explanations unless explicitly requested.
+
+Output rules:
+- For edits: return ONLY the changed lines
+- For new files: return the FULL file only
+
+For templates:
+- Never create more than one {% block content %}
+- Never duplicate {% extends %}
+- Never create more than one <body>
+- Never move existing template tags
+- Only insert code at the exact specified location
+
+If the task is ambiguous: STOP and ask.

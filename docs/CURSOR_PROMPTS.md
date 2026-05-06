@@ -101,3 +101,41 @@ Remove any include statements.
 
 Output:
 Return full file only. No explanation.
+
+## Task 8: AboutPage Template
+
+Modify only home/templates/home/about_page.html.
+Do not inspect other files.
+
+Task:
+Create this file with EXACT content:
+
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+<section>
+  <h1>{{ page.title }}</h1>
+</section>
+
+<section>
+  <p>{{ page.intro }}</p>
+</section>
+
+<section>
+  {{ page.body|richtext }}
+</section>
+
+<section>
+  {{ page.values_section|richtext }}
+</section>
+
+{% endblock content %}
+
+Constraints:
+Create file if not exists.
+Do not modify other files.
+
+Output:
+Return full file only. No explanation.
