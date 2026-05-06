@@ -28,3 +28,13 @@ class AboutPage(Page):
         FieldPanel("body"),
         FieldPanel("values_section"),
     ]
+
+class PracticeAreaPage(Page):
+    short_description = models.TextField(blank=True)
+    full_description = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("short_description"),
+        FieldPanel("full_description"),
+    ]
+    
