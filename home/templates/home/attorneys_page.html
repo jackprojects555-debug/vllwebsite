@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+<section>
+  <h1>{{ page.title }}</h1>
+</section>
+
+<section>
+  {% for attorney in page.get_children.live %}
+    <article>
+      <h2><a href="{{ attorney.url }}">{{ attorney.title }}</a></h2>
+    </article>
+  {% empty %}
+    <p>No attorneys added yet.</p>
+  {% endfor %}
+</section>
+
+{% endblock content %}

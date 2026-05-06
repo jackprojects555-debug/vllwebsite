@@ -6,7 +6,7 @@ from wagtail.models import Page
 
 
 class HomePage(Page):
-    subpage_types = ["home.AboutPage", "home.PracticeAreaPage", "home.AttorneysPage"]
+    subpage_types = ["home.AboutPage", "home.PracticeAreaPage", "home.AttorneysPage", "home.ContactPage"]
     hero_title = models.CharField(max_length=255, blank=True)
     hero_subtitle = models.CharField(max_length=255, blank=True)
     intro_text = RichTextField(blank=True)
@@ -56,5 +56,18 @@ class AttorneyPage(Page):
         FieldPanel("role"),
         FieldPanel("bio"),
         FieldPanel("email"),
+    ]
+
+class ContactPage(Page):
+    address = models.TextField(blank=True)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=100, blank=True)
+    contact_form_enabled = models.BooleanField(default=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("address"),
+        FieldPanel("email"),
+        FieldPanel("phone"),
+        FieldPanel("contact_form_enabled"),
     ]
     

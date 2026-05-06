@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+<section>
+  <h1>{{ page.name }}</h1>
+  <p>{{ page.role }}</p>
+</section>
+
+<section>
+  {{ page.bio|richtext }}
+</section>
+
+<section>
+  <p>{{ page.email }}</p>
+</section>
+
+{% endblock contentpython manage.py checkEOF
+python manage.py check
+eof
