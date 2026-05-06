@@ -68,3 +68,36 @@ Do not change anything else.
 Output:
 Return only diff.
 
+## Task 7: HomePage Template
+
+Modify only home/templates/home/home_page.html.
+Do not inspect other files.
+
+Task:
+Replace ONLY the content block.
+
+Final content block must be EXACTLY:
+
+{% block content %}
+<section>
+  <h1>{{ page.hero_title }}</h1>
+  <p>{{ page.hero_subtitle }}</p>
+</section>
+
+<section>
+  {{ page.intro_text|richtext }}
+</section>
+
+<section>
+  <a href="/contact/">{{ page.contact_cta_text }}</a>
+</section>
+{% endblock content %}
+
+Constraints:
+Do not change extends.
+Do not add CSS.
+Do not modify other blocks.
+Remove any include statements.
+
+Output:
+Return full file only. No explanation.

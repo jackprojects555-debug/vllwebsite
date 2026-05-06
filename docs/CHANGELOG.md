@@ -17,6 +17,10 @@
 - AttorneyPage restricted to AttorneysPage parent
 - PracticeAreaPage restricted to HomePage parent
 - Verified hierarchy in Wagtail admin
+- Created HomePage template
+- Connected CMS fields to frontend
+- Removed default welcome screen
+- Verified content rendering after publish
 
 ## 05.05.2026
 
