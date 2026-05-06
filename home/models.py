@@ -40,4 +40,17 @@ class PracticeAreaPage(Page):
 
 class AttorneysPage(Page):
     pass
+
+class AttorneyPage(Page):
+    name = models.CharField(max_length=255)
+    role = models.CharField(max_length=255, blank=True)
+    bio = RichTextField(blank=True)
+    email = models.EmailField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("name"),
+        FieldPanel("role"),
+        FieldPanel("bio"),
+        FieldPanel("email"),
+    ]
     
