@@ -32,21 +32,22 @@ Modify only home/models.py.
 Do not inspect other files.
 
 Task:
-Add a new AboutPage model.
+Append this class at the end of the file:
 
-Fields:
-title = models.CharField(max_length=255)
-intro = models.TextField(blank=True)
-body = RichTextField(blank=True)
-values_section = RichTextField(blank=True)
+class AboutPage(Page):
+    title = models.CharField(max_length=255)
+    intro = models.TextField(blank=True)
+    body = RichTextField(blank=True)
+    values_section = RichTextField(blank=True)
 
-Add content_panels for all fields.
+    content_panels = Page.content_panels + [
+        FieldPanel("title"),
+        FieldPanel("intro"),
+        FieldPanel("body"),
+        FieldPanel("values_section"),
+    ]
 
-Constraints:
-Add only required imports if missing.
-Do not modify HomePage.
-Do not refactor.
 Do not change anything else.
 
 Output:
-Return only diff.
+Return only diff. No explanation.

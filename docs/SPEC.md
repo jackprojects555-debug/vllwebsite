@@ -15,39 +15,57 @@ Hebrew: ורדי, לביא-לובודה ושות׳
 - Python 3.14.4
 - Django 6.0.4
 - Wagtail 7.3.1 CMS
-- PostgreSQL
+- SQLite for local development
+- PostgreSQL for production
 - HTML / CSS
 - Render deployment
 
 ## Languages
-- Hebrew (primary, RTL)
-- English (secondary)
-
-## Main Pages
-1. Home
-2. About
-3. Practice Areas
-4. Individual Practice Area Page
-5. Attorneys
-6. Individual Attorney Page
-7. Articles / Insights (infrastructure only)
-8. Contact
-9. Legal Information
-10. Privacy Policy
+- Hebrew, primary, RTL
+- English, secondary
 
 ## Design Direction
-Luxury boutique law firm.  
-Minimalist, clean, quiet, serious, elegant.  
+Luxury boutique law firm.
 
-No clutter  
-No aggressive marketing  
-No generic templates  
+The design should be:
+- minimalist
+- clean
+- elegant
+- quiet
+- serious
+- spacious
+- professional
+- refined
 
-## CMS Structure (Strict)
+Avoid:
+- generic law firm look
+- stock legal imagery
+- noisy animations
+- aggressive marketing
+- visual clutter
 
-The CMS must be structured, not flexible.
+Preferred visual direction:
+- white or warm off-white background
+- dark gray / black text
+- subtle navy or muted gold accents
+- generous whitespace
+- simple top navigation
+- elegant typography
+- mobile responsive
 
-### Home Page
+## CMS Principle
+The CMS must be structured, not a free page builder.
+
+The goal is to preserve a consistent luxury design.  
+Editors should change content, not redesign pages.
+
+## Main Pages
+
+### 1. Home Page
+Purpose:
+Present the firm clearly and elegantly.
+
+Fields:
 - hero_title
 - hero_subtitle
 - intro_text
@@ -55,22 +73,51 @@ The CMS must be structured, not flexible.
 - selected_attorneys
 - contact_cta_text
 
-### About Page
+### 2. About Page
+Purpose:
+Present the firm, its approach, and professional character.
+
+Fields:
 - title
 - intro
 - body
 - values_section
 
-### Practice Area Page
+### 3. Practice Areas Index
+Purpose:
+List the firm’s main legal practice areas.
+
+Initial practice areas:
+- Tax
+- International Tax
+- Trusts
+- Commercial Law
+- Commercial Litigation
+- Real Estate
+
+### 4. Practice Area Page
+Purpose:
+Dedicated page for each practice area.
+
+Fields:
 - title
 - short_description
 - full_description
 - key_services
 
-### Attorneys Page
-- listing only
+### 5. Attorneys Index
+Purpose:
+List the firm’s attorneys.
 
-### Attorney Page
+Initial attorneys:
+- Sagi Vardi
+- Sagi Loboda
+
+### 6. Attorney Page
+Purpose:
+Dedicated profile page for each attorney.
+
+Fields:
 - name
 - title
 - image
@@ -79,47 +126,77 @@ The CMS must be structured, not flexible.
 - languages
 - email
 
-### Contact Page
+### 7. Contact Page
+Purpose:
+Allow users to contact the firm.
+
+Fields:
 - address
 - email
 - phone
 - contact_form_enabled
 
-### Articles (Infrastructure)
+Primary email:
+vll@vll.co.il
+
+### 8. Articles / Insights
+Purpose:
+Infrastructure only in first version.
+
+Fields:
 - title
 - date
 - author
 - body
-- seo fields
+- seo_title
+- meta_description
 
-## CMS Capabilities
-- Edit all content (HE + EN)
-- Add/edit attorneys
-- Add/edit practice areas
-- Upload images
-- SEO per page
-- Manage menus
+Do not emphasize articles in the first launch.
+
+### 9. Legal Information
+Purpose:
+Basic legal disclaimer page.
+
+### 10. Privacy Policy
+Purpose:
+Basic privacy policy page.
 
 ## First Version Scope
-- Full bilingual structure
-- Homepage
-- About
-- Practice Areas
-- Attorneys
-- Contact
-- CMS admin
-- Basic SEO
+The first version should include:
+- working Wagtail CMS
+- structured Home Page
+- About Page
+- Practice Areas structure
+- Attorney profiles structure
+- Contact Page
+- Hebrew and English structure
+- clean responsive templates
+- basic SEO fields
+- simple navigation
+- footer with contact details
 
-No need to launch articles yet.
-
-## Team
-- Sagi Vardi
-- Sagi Loboda
-
-## Contact
-vll@vll.co.il
+## Out of Scope for First Version
+Do not include yet:
+- full article publishing UI
+- complex blog design
+- advanced search
+- advanced permissions
+- animations
+- newsletter
+- CRM integration
+- complex menu builder
+- payment features
+- client portal
 
 ## Development Principle
-Cursor is used only for execution.  
-All planning is done manually.  
-Tasks must be small, isolated, and controlled.
+Cursor is used only for execution.
+
+All planning is done manually.
+
+Tasks must be:
+- small
+- isolated
+- testable
+- committed after completion
+
+Do not ask Cursor to build the whole website at once.
