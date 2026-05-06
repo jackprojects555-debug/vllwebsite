@@ -31,7 +31,7 @@ Modify only home/models.py.
 
 Do not inspect other files.
 
-Task:
+## Task 3:
 Append this class at the end of the file:
 
 class AboutPage(Page):
@@ -51,3 +51,20 @@ Do not change anything else.
 
 Output:
 Return only diff. No explanation.
+
+## Task 4: AttorneysPage Model
+
+Modify only home/models.py.
+Do not inspect other files.
+
+Task:
+Add EXACTLY this code at the end of the file:
+
+class AttorneysPage(Page):
+    pass
+
+Do not change anything else.
+
+Output:
+Return only diff.
+

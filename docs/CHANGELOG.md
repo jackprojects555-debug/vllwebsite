@@ -4,6 +4,9 @@
 - Fields: short_description, full_description
 - Connected fields to Wagtail admin via content_panels
 - Ran migrations and verified page type appears in admin
+- Added AttorneysPage model
+- Created basic page type for attorneys listing
+- Ran migrations and verified page type appears in admin
 
 ## 05.05.2026
 

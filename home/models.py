@@ -37,4 +37,7 @@ class PracticeAreaPage(Page):
         FieldPanel("short_description"),
         FieldPanel("full_description"),
     ]
+
+class AttorneysPage(Page):
+    pass
     
