@@ -6,7 +6,7 @@ from wagtail.models import Page
 
 
 class HomePage(Page):
-    subpage_types = ["home.AboutPage", "home.PracticeAreaPage", "home.AttorneysPage", "home.ContactPage"]
+    subpage_types = ["home.AboutPage", "home.PracticeAreasPage", "home.AttorneysPage", "home.ContactPage"]
     hero_title = models.CharField(max_length=255, blank=True)
     hero_subtitle = models.CharField(max_length=255, blank=True)
     intro_text = RichTextField(blank=True)
@@ -30,8 +30,18 @@ class AboutPage(Page):
         FieldPanel("values_section"),
     ]
 
+class PracticeAreasPage(Page):
+    subpage_types = ["home.PracticeAreaPage"]
+
+    intro = models.TextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel("intro"),
+    ]
+
+
 class PracticeAreaPage(Page):
-    parent_page_types = ["home.HomePage"]
+    parent_page_types = ["home.PracticeAreasPage"]
     short_description = models.TextField(blank=True)
     full_description = RichTextField(blank=True)
 

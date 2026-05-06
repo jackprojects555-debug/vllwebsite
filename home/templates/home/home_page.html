@@ -14,8 +14,52 @@
   {{ page.intro_text|richtext }}
 </section>
 
-<section>
-  <a href="/contact/">{{ page.contact_cta_text }}</a>
+<section class="practice-preview">
+  <div class="section-heading">
+    <h2>Practice Areas</h2>
+    <p>Selected areas of legal work handled by the firm.</p>
+  </div>
+
+  <div class="practice-grid">
+    {% for child in page.get_children.live %}
+      {% if child.title == "Practice" %}
+        {% for practice_child in child.get_children.live %}
+          {% with practice=practice_child.specific %}
+            <article class="practice-card">
+              <h3><a href="{{ practice.url }}">{{ practice.title }}</a></h3>
+              <p>{{ practice.short_description }}</p>
+            </article>
+          {% endwith %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="firm-contact-section">
+  <div class="firm-contact-left">
+    {% for child in page.get_children.live %}
+      {% with contact=child.specific %}
+        {% if contact.email %}
+          <h2>Vardi, Lavie-Loboda & Co.</h2>
+          <p>Address: {{ contact.address|safe }}</p>
+          <p>Phone: {{ contact.phone }}</p>
+          <p>Email:
+            <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+          </p>
+        {% endif %}
+      {% endwith %}
+    {% endfor %}
+  </div>
+
+  <div class="firm-contact-right">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/practice/">Practice</a>
+    <a href="/the-team/">Our Team</a>
+    <a href="/contact/">Contact</a>
+    <a href="#">HEBREW</a>
+  </div>
 </section>
 
 {% endblock content %}

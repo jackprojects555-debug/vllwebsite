@@ -34,20 +34,33 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
 
-<nav>
-  <a href="/">Home</a>
+        <header class="site-header">
 
-  {% wagtail_site as current_site %}
-  {% with current_site.root_page.get_children as menu_pages %}
-    {% for menu_page in menu_pages %}
-      {% if menu_page.live and menu_page.show_in_menus %}
-        <a href="{{ menu_page.url }}">{{ menu_page.title }}</a>
-      {% endif %}
-    {% endfor %}
-  {% endwith %}
-</nav>
+          <div class="header-logo">
+            <a href="/">
+              <img src="{% static 'images/vll-logo.png' %}" alt="VLL Law Office">
+            </a>
+          </div>
+        
+          <nav class="site-nav">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <a href="/practice/">Practice</a>
+            <a href="/the-team/">Our Team</a>
+            <a href="/contact/">Contact</a>
+            <a href="#">HEBREW</a>
+          </nav>
+        
+        </header>
 
         {% block content %}{% endblock %}
+        <footer class="site-footer">
+          <p>
+            All rights reserved to Vardi, Lavie-Loboda & Co. |
+            Developed by: VLL |
+            Design: VLL
+          </p>
+        </footer>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/config.js' %}"></script>

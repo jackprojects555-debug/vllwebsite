@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+
+<section>
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.intro }}</p>
+</section>
+
+<section class="practice-preview">
+  <div class="practice-grid">
+    {% for child in page.get_children.live %}
+      {% with practice=child.specific %}
+        <article class="practice-card">
+          <h3><a href="{{ practice.url }}">{{ practice.title }}</a></h3>
+          <p>{{ practice.short_description }}</p>
+        </article>
+      {% endwith %}
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock content %}
