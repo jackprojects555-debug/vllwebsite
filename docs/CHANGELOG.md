@@ -11,6 +11,12 @@
 - Fields: name, role, bio, email
 - Connected fields to Wagtail admin via content_panels
 - Ran migrations and verified page type appears in admin
+- Added Wagtail page hierarchy rules
+- HomePage can contain AboutPage, PracticeAreaPage, and AttorneysPage
+- AttorneysPage can contain AttorneyPage
+- AttorneyPage restricted to AttorneysPage parent
+- PracticeAreaPage restricted to HomePage parent
+- Verified hierarchy in Wagtail admin
 
 ## 05.05.2026
 
