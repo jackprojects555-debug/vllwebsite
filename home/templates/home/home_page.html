@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags vll_i18n %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -53,12 +53,22 @@
   </div>
 
   <div class="firm-contact-right">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/practice/">Practice</a>
-    <a href="/the-team/">Our Team</a>
-    <a href="/contact/">Contact</a>
-    <a href="#">HEBREW</a>
+    {% cms_navigation "main" as main_menu %}
+    {% if main_menu %}
+      {% for item in main_menu.links.all %}
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if request.LANGUAGE_CODE == 'he' %}
+      <a href="{% language_switch_url page 'en' %}">ENGLISH</a>
+    {% else %}
+      {% language_switch_url_or_none page 'he' as hebrew_url %}
+      {% if hebrew_url %}
+        <a href="{{ hebrew_url }}">HEBREW</a>
+      {% endif %}
+    {% endif %}
   </div>
 </section>
 
