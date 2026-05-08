@@ -4,5 +4,4 @@ __pycache__/
 .DS_Store
 data/*
 !data/.gitkeep
-db.sqlite3
 backups/
